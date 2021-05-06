@@ -1,6 +1,6 @@
 import Discord from "discord.js";
 import * as dotenv from "dotenv";
-import { ping, clip } from "./commands";
+import {ping, clip} from "./commands";
 dotenv.config();
 
 const client = new Discord.Client();

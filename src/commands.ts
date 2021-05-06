@@ -1,5 +1,5 @@
 import Discord, { Message } from "discord.js";
-import * as clipes from "database/clipes.json";
+import * as clipes from "./database/clipes.json";
 import { exists } from "fs";
 
 const ping = (message : Message) => {
@@ -12,10 +12,8 @@ const clip = (message : Message) => {
   const randIndex = Math.floor(Math.random() * keys.length)
   const randKey = keys[randIndex]
   const link = clipes[randKey]
-  const clipe = tostring(link)
+  const clipe = toString(link)
   message.reply(clipe)
 }
-
-const clipar = (message : Message) =>
 
 export {ping, clip}
