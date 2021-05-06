@@ -1,6 +1,6 @@
 import Discord from "discord.js";
 import * as dotenv from "dotenv";
-import { ping } from "./commands";
+import { ping, clip } from "./commands";
 dotenv.config();
 
 const client = new Discord.Client();
@@ -14,8 +14,9 @@ client.on("message", function(message) {
   const args = commandBody.split(' ');
   const shift = args.shift() !;
   const command = shift.toLowerCase()
-  const commands : {[key: string]:typeof ping} = {
+  const commands : {[key: string]:typeof ping, clip} = {
     ping,
+    clip,
   };
   const res = commands[command];
   res(message)
